@@ -89,11 +89,14 @@ describe Museum do
 
 	describe '#patrons_by_exhibit_interest' do
 		it 'can list all admited patrons by exhibit interest' do
+			dmns.admit(patron_1)
+			dmns.admit(patron_2)
+			dmns.admit(patron_3)
 
 			patrons_by_exhibit = {
-				gems_and_minerals: [patron_1],
-				dead_sea_scrolls: [patron_1, patron_2, patron_3],
-				imax: []
+				gems_and_minerals => [patron_1],
+				dead_sea_scrolls => [patron_1, patron_2, patron_3],
+				imax => []
 			}
 			expect(dmns.patrons_by_exhibit_interest).to eq(patrons_by_exhibit)
 		end
