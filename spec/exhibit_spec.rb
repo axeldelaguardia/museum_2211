@@ -1,7 +1,8 @@
-require './spec_helper'
+require './spec/spec_helper'
 
 
 RSpec.describe Exhibit do
+	let(:exhibit) {Exhibit.new({name: "Gems and Minerals", cost: 0})}
   describe '#initialize' do
 		it 'exists' do
 			expect(exhibit).to be_a(Exhibit)
