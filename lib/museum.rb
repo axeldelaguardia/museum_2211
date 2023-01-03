@@ -41,5 +41,10 @@ class Museum
 		list = patrons_by_exhibit_interest[exhibit].find_all do |patron|
 			patron.spending_money < exhibit.cost
 		end
+		if !list.empty?
+			return list
+		else
+			return nil if list.empty?
+		end
 	end
 end
