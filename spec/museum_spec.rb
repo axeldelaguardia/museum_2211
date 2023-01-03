@@ -101,4 +101,15 @@ describe Museum do
 			expect(dmns.patrons_by_exhibit_interest).to eq(patrons_by_exhibit)
 		end
 	end
+
+	describe '#ticket_loterry_contestants' do
+		it 'returns array of patrons who dont have enough money but interest in exhibit' do
+			dmns.admit(patron_1)
+			dmns.admit(patron_2)
+			dmns.admit(patron_3)
+
+			expect(ticket_loterry_contestants(dead_sea_scrolls)).to eq([patron_1, patron_3])
+			expect(ticket_loterry_contestants(gems_and_minerals)).to eq(nil)
+		end
+	end
 end
