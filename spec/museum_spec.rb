@@ -86,4 +86,16 @@ describe Museum do
 			expect(dmns.patrons).to eq([patron_1, patron_2, patron_3])
 		end
 	end
+
+	describe '#patrons_by_exhibit_interest' do
+		it 'can list all admited patrons by exhibit interest' do
+
+			patrons_by_exhibit = {
+				gems_and_minerals: [patron_1],
+				dead_sea_scrolls: [patron_1, patron_2, patron_3],
+				imax: []
+			}
+			expect(dmns.patrons_by_exhibit_interest).to eq(patrons_by_exhibit)
+		end
+	end
 end
